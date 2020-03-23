@@ -1,35 +1,29 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      usuarios: [
-        {
-          nombre: "Juan Carlos",
-          correo: "sulbaranjc@gmail.com",
-          enlace: "sulbaranjc.webside"
-        },
-        {
-          nombre: "Rodolfito",
-          correo: "rodolfo@platzi.com",
-          enlace: ""
-        },
-        {
-          nombre: "Platzi",
-          correo: "info@platzi.com",
-          enlace: "platzi.com"
-        }
-      ]
+      usuarios: []
     };
+  }
+
+  async componentDidMount() {
+    const respuesta = await axios.get(
+      "https://jsonplaceholder.typicode.com/users"
+    );
+    this.setState({
+      usuarios: respuesta.data
+    });
   }
 
   ponerFilas = () =>
     this.state.usuarios.map(usuario => (
-      <tr>
-        <td>{usuario.nombre}</td>
-        <td>{usuario.correo}</td>
-        <td>{usuario.enlace}</td>
+      <tr key={usuario.id}>
+        <td>{usuario.name}</td>
+        <td>{usuario.email}</td>
+        <td>{usuario.website}</td>
       </tr>
     ));
 
