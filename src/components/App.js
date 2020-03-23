@@ -3,14 +3,14 @@ import React from "react";
 const App = () => {
   const ponerFilas = () => [
     <tr>
-      <td>Rodolfo</td>
-      <td>Rodolfo@platzi.com</td>
-      <td>Rodolfo.com</td>
+      <td>Juan Carlos</td>
+      <td>sulbaranjc@gmail.com</td>
+      <td>sulbaranjc.webside</td>
     </tr>,
     <tr>
-      <td>Rodolfo</td>
-      <td>Rodolfo@platzi.com</td>
-      <td>Rodolfo.com</td>
+      <td>Fernada</td>
+      <td>fernanda@platzi.com</td>
+      <td>fernanda.com</td>
     </tr>
   ];
 
